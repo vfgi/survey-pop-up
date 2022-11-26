@@ -16,7 +16,7 @@ const Resume = () => {
                 <Input margin/>
                 <Input margin/>
             </S.InputContainer>
-            <S.ButtonContainer>
+            <S.ButtonContainer align="space-between">
                 <Button variant={VARIANT.OUTLINED} onClick={() => dispatch(changeStep(3))}>Back</Button>
                 <Button>Finish</Button>
             </S.ButtonContainer>

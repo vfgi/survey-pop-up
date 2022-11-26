@@ -8,11 +8,14 @@ export enum VARIANT {
 
 interface InputProps {
     variant?: VARIANT
+    margin?: boolean
 }
 
 export const Label = styled.span<InputProps>`
+    width: 100%;
     font-size: 16px;
     font-weight: 600;
+    margin-top: ${props => props.margin ? props.theme.spacing.lg : 0};
     ${props => {
         switch (props.variant) {
         case VARIANT.ERROR:
