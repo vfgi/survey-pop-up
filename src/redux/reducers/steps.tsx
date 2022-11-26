@@ -1,13 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ReactElement } from "react"
-// import { RootState } from '../rootReducers'
-
 export interface StepState {
     step: number,
 }
 
 export const initialState: StepState = {
-    step: 1,
+    step: Number(localStorage.getItem('step')) || 1,
 }
 
 export const stepSlice = createSlice({

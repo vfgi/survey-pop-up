@@ -10,6 +10,7 @@ import { changeStep } from "../../redux/reducers/steps";
 import * as S from './styles'
 import { Label } from "../../components/label";
 import { ErrorMessage } from "../../components/errorMessage";
+import { Form } from "../../components/form";
 
 interface FormProps {
     name: string
@@ -21,16 +22,14 @@ const FirstStep = () => {
     const onSubmit = (data: FormProps) => {
         localStorage.setItem('name', data.name);
         localStorage.setItem('email', data.email);
+        localStorage.setItem('step', '2');
         dispatch(changeStep(2))
     };
-
-    const defaultName = localStorage.getItem('name')
-    const defaultEmail = localStorage.getItem('email')
-
+    
     const useFormInstance = useForm<FormProps>({
         defaultValues: {
-          name: defaultName || '',
-          email: defaultEmail || '',
+          name: localStorage.getItem('name') || '',
+          email: localStorage.getItem('email') || '',
         },
     })
 
@@ -50,7 +49,7 @@ const FirstStep = () => {
 
     return (
         <React.Fragment>
-            <S.Form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)}>
                 <S.InputContainer>
                     <Label>Name:</Label>
                     <Input 
@@ -71,8 +70,10 @@ const FirstStep = () => {
                     />
                     {errors.email && <ErrorMessage>Invalid e-mail address</ErrorMessage>}
                 </S.InputContainer>
-                <Button type="submit">Continue</Button>
-            </S.Form>
+                <S.ButtonContainer align="right">
+                    <Button type="submit">Continue</Button>
+                </S.ButtonContainer>
+            </Form>
         </React.Fragment>
     )
 }

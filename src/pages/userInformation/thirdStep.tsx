@@ -16,7 +16,7 @@ const ThirdStep = () => {
                 <Input margin/>
                 <Input margin/>
             </S.InputContainer>
-            <S.ButtonContainer>
+            <S.ButtonContainer align="space-between">
                 <Button variant={VARIANT.OUTLINED} onClick={() => dispatch(changeStep(2))}>Back</Button>
                 <Button onClick={() => dispatch(changeStep(4))}>Continue</Button>
             </S.ButtonContainer>
