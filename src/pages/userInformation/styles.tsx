@@ -18,3 +18,11 @@ export const ButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
 `
+
+export const Form = styled.form`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
