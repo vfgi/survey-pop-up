@@ -8,6 +8,7 @@ declare module 'styled-components' {
       white: string
       background: string
       gray: string
+      black: string
       opacityBlack: string
    }
    spacing: {

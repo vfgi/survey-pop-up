@@ -37,7 +37,7 @@ export const Button = styled.button<ButtonProps>`
         switch (props.size) {
             case SIZES.SMALL:
                 return `
-                width: 144px;
+                width: 80px;
                 height: 42px
             `;
             case SIZES.LARGE:
@@ -48,7 +48,7 @@ export const Button = styled.button<ButtonProps>`
             case SIZES.MEDIUM:
             default:
                 return `
-                width: 144px;
+                width: 110px;
                 height: 42px
             `;
         }
