@@ -5,6 +5,7 @@ export const theme = {
         white: '#fff',
         background: '#EAE5E5',
         gray: '#BEBEBE',
+        black: '#000',
         opacityBlack: 'rgba(0, 0, 0, 0.5)'
     },
     spacing: {

@@ -3,8 +3,8 @@ import React from 'react';
 import * as S from './styles'
 
 interface HeaderProps {
-    children?: JSX.Element
-  }
+  children?: JSX.Element
+}
 
 const Header: React.FC<HeaderProps> = ({children}) => {
   return (

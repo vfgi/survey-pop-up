@@ -12,8 +12,12 @@ export const Container = styled.div`
 `
 
 export const Modal = styled.div`
+    border-radius: 10px;
     min-width: 340px;
-    min-height: 600px;
     background-color: ${props => props.theme.colors.white};
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: ${props => props.theme.spacing.lg};
 `
