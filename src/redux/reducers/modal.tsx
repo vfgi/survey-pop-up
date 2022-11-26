@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import React, { ReactElement } from "react"
+import { ReactElement } from "react"
 // import { RootState } from '../rootReducers'
 
 export interface ModalState {
@@ -27,6 +27,6 @@ export const modalSlice = createSlice({
     },
 })
 
-export const { openModal, closeModal } = modalSlice.actions
+export const { openModal, closeModal, setChildren } = modalSlice.actions
 
 export default modalSlice.reducer
