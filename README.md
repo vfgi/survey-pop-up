@@ -12,7 +12,7 @@ This application was created using:
 
 #### Application: 
 
-This Application can be used to render a survey pop-up in any HTML file just importing the JS script and the CSS file to relate the stylesheet.
+This Application can be used to render a survey pop-up in any HTML file just importing the JS script
 
 It save every step in the localstorage so you can pickup the inserted information in the form at any stack or framework that you using today
 
@@ -41,7 +41,7 @@ To Visit App:
 
 #### HTML usage instructions:  
 
-You can also build this app and extract the .js main file and the .css main file to use in any .HTML structure
+You can also build this app and extract the .js main file to use in any .HTML structure
 
 you'll need to run the build command
 
@@ -49,7 +49,7 @@ you'll need to run the build command
 
 then add this to the <Head> tag changing the js and the css file to your js and css filename
 
-`<script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet">`
+`<script defer="defer" src="main.js"></script>`
 
 then you just need to call the component by id in a div tag inside of the <body> html tag
 
