@@ -4,6 +4,7 @@ import styled from 'styled-components'
 export enum VARIANT {
     DEFAULT,
     ERROR,
+    GRAY
 }
 
 interface InputProps {
@@ -12,7 +13,6 @@ interface InputProps {
 }
 
 export const Label = styled.span<InputProps>`
-    width: 100%;
     font-size: 16px;
     font-weight: 600;
     margin-top: ${props => props.margin ? props.theme.spacing.lg : 0};
@@ -21,6 +21,11 @@ export const Label = styled.span<InputProps>`
         case VARIANT.ERROR:
             return `
             color: ${props.theme.colors.secondary};
+        `;
+        case VARIANT.GRAY:
+            return `
+            color: ${props.theme.colors.gray};
+            margin-left: ${props.theme.spacing.md}
         `;
         case VARIANT.DEFAULT:
         default:

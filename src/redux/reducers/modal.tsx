@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 import { ReactElement } from "react"
 // import { RootState } from '../rootReducers'
 
@@ -20,13 +20,10 @@ export const modalSlice = createSlice({
         },
         closeModal: (state) => {
             state.isOpened = false
-        },
-        setChildren: (state, action: PayloadAction<ReactElement>) => {
-            state.children = action.payload
         }
     },
 })
 
-export const { openModal, closeModal, setChildren } = modalSlice.actions
+export const { openModal, closeModal } = modalSlice.actions
 
 export default modalSlice.reducer

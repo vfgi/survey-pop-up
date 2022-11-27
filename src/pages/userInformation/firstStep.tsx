@@ -49,7 +49,7 @@ const FirstStep = () => {
 
     return (
         <React.Fragment>
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form role="firstStep" onSubmit={handleSubmit(onSubmit)}>
                 <S.InputContainer>
                     <Label>Name:</Label>
                     <Input 

@@ -57,7 +57,7 @@ const SecondStep = () => {
     
     return (
         <React.Fragment>
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form role="secondStep" onSubmit={handleSubmit(onSubmit)}>
                 <S.InputContainer>
                     <Label>Age:</Label>
                     <Select 
@@ -65,30 +65,33 @@ const SecondStep = () => {
                             setValue('age', e.target.value)
                             clearErrors('age')
                         }}
-                        value={watch('age')}
+                        defaultValue={watch('age') || 'option'}
                         variant={errors.age ? SELECT.ERROR : SELECT.DEFAULT}
                     >
-                        <option selected disabled value="">Select your age</option>
-                        {ageOptions.map((age) => <option value={age}>{age} years old</option>)}
+                        <option disabled value="option">Select your age</option>
+                        {ageOptions.map((age, index) => 
+                            <option value={age} key={index}>{age} years old</option>)}
                     </Select>
                     {errors.age && <ErrorMessage>Please select you age</ErrorMessage>}
                 </S.InputContainer>
-                <Label margin>Select your gender</Label>
-                    {genders.map(gender => 
-                        <S.GenderItem>
-                            <RadioButton 
-                                value={gender} 
-                                onChange={e => {
-                                    setValue('gender', e.target.value)
-                                    clearErrors('gender')
-                                }} 
-                                variant={errors.gender ? SELECT.ERROR : SELECT.DEFAULT}
-                                checked={watch('gender') === gender}
-                            />
-                            <Label variant={errors.gender ? SELECT.ERROR : SELECT.DEFAULT}>{gender}</Label>
-                        </S.GenderItem>
-                    )}
-                {errors.gender && <ErrorMessage>Please select your gender</ErrorMessage>}
+                <S.GenderContainer>
+                    <Label margin>Select your gender</Label>
+                        {genders.map((gender, index) => 
+                            <S.Item key={index}>
+                                <RadioButton 
+                                    value={gender} 
+                                    onChange={e => {
+                                        setValue('gender', e.target.value)
+                                        clearErrors('gender')
+                                    }} 
+                                    variant={errors.gender ? SELECT.ERROR : SELECT.DEFAULT}
+                                    checked={watch('gender') === gender}
+                                />
+                                <Label variant={errors.gender ? SELECT.ERROR : SELECT.DEFAULT}>{gender}</Label>
+                            </S.Item>
+                        )}
+                    {errors.gender && <ErrorMessage>Please select your gender</ErrorMessage>}
+                </S.GenderContainer>
                 <S.ButtonContainer align="space-between">
                     <Button variant={VARIANT.OUTLINED} onClick={() => dispatch(changeStep(1))}>Back</Button>
                     <Button type="submit">Continue</Button>
