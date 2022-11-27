@@ -55,3 +55,13 @@ then you just need to call the component by id in a div tag inside of the <body>
 
 `<div id="survey-test-container">`
 
+### Example of HTML code
+
+Here is an example of the code running in HTML only code
+
+`https://github.com/vfgi/survey-html`
+
+you can clone this repository also.
+
+Enjoy!!!
+
